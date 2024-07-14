@@ -1,0 +1,27 @@
+//283. Move zeroes
+
+class Solution {
+    public void moveZeroes(int[] nums) {
+        int n = nums.length;
+        int i = 0;
+
+        while(i < n) {
+            if(nums[i] == 0) {
+                int j = i;
+
+                while(j < n - 1) {
+                    int temp = nums[j];
+                    nums[j] = nums[j + 1];
+                    nums[j + 1] = temp;
+                    j++;
+                }
+
+                n--;
+            }
+
+            else {
+                i++;
+            }
+        }
+    }
+}
